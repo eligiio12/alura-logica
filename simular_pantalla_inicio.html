@@ -1,0 +1,46 @@
+<meta charset="UTF-8">}
+
+<h1>PROGRAMA - SIMULANDO UNA PANTALLA DE INICIO DE SESIÓN</h1>
+
+
+
+<script>
+
+    function saltarlinea(){
+
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+
+
+        document.write("<big>" + frase + "</big>");
+        saltarlinea();
+    }
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+    var intentos = 3, contador = 1;
+
+
+    while(contador <= intentos){
+
+    var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+     if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            contador = intentos;
+        } else {
+            if (contador == 3) {
+                alert("Agotaste el número permitido de intentos!");
+            } else {
+                alert("Inicio de sesión inválido. Favor intente de nuevo");
+            }
+        }
+        contador++;
+    }
+
+    imprimir ("Fin");
+
+</script>

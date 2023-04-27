@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA</h1>
+
+<script>
+
+	function saltarlinea(){
+
+		document.write("<br><br><br><hr><br>");
+
+	}
+
+	function imprimir(frase){
+
+
+		document.write("<big>" + frase + "</big>");
+		saltarlinea();
+	}
+
+	imprimir("<h3>Hola amigos</h3>");
+	// Este codigo calcula las edades de Eligio, Luis, Judith y Carlos.
+	var anho = 2023;
+	var saltolinea = "<br><br>";
+	imprimir("Eligio tiene:" + (anho-1998) + " años.");
+	imprimir("Luis tiene:" + (anho-1988) + " años.");
+	imprimir("Judith tiene:" + (anho-1978) + " años.");
+	imprimir("Carlos tiene:" + (anho-1996) + " años.");
+
+	// Este codigo calcula el promedio de las edades.
+	var edadEligio = anho-1998;
+	var edadLuis = anho-1988;
+	var edadJudith = anho-1978;
+	var edadCarlos = anho-1996;
+
+	var promedio = (edadEligio + edadLuis + edadJudith + edadCarlos)/4;
+
+	imprimir("El promedio de las edades es: " + Math.round(promedio) + ".");
+
+	//Diferencia edad entre Eligio y Luis.
+
+	var difeedad = edadEligio - edadLuis;
+	imprimir("La diferencia de edad es: "+ difeedad + ".");
+</script>

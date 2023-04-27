@@ -1,0 +1,33 @@
+<canvas width="800" height="600"> </canvas>
+
+<script>
+  var pantalla = document.querySelector("canvas");
+  var pincel = pantalla.getContext("2d");
+  var angulo = 2*Math.PI;
+  var velocidad = Math.PI/32;
+  const centro = {x:200, y:200};
+  const radio = 100;
+  const radioEsfera = 5;
+  
+  pincel.fillStyle = "black";
+
+  function dibujarCirculo(x,y) {
+    pincel.fillStyle = "blue";
+    pincel.beginPath ();
+    pincel.arc (x,y,radioEsfera,0,2*Math.PI);
+    pincel.fill();
+  }
+
+  function limpiarPantalla() {pincel.clearRect (0,0,800,600);}
+
+  function actualizarPantalla() {
+    angulo = (angulo - velocidad)%(2*Math.PI);
+    let _x = centro.x + Math.cos(angulo)*radio;
+    let _y = centro.y + Math.sin(angulo)*radio;
+    
+    limpiarPantalla();
+    dibujarCirculo(_x,_y);
+  }
+
+  setInterval(actualizarPantalla, 20)
+</script>
